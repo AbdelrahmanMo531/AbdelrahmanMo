@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>عبدالرحمن محمد | مطور ووردبريس</title>
+<meta name="description" content="Abdelrahman Mohamed – WordPress Developer in Cairo. Live WordPress and WooCommerce projects.">
+<meta property="og:title" content="Abdelrahman Mohamed – WordPress Developer">
+<meta property="og:description" content="Live WordPress and WooCommerce sites: education platforms, e-commerce stores and company websites.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230E6B64'/%3E%3Ctext x='32' y='43' font-size='30' text-anchor='middle' fill='white' font-family='Arial' font-weight='700'%3EAM%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    --paper: #F1F3EF;
+    --surface: #FFFFFF;
+    --ink: #14203A;
+    --muted: #5A6479;
+    --line: #DADFE2;
+    --accent: #0E6B64;
+    --accent-ink: #FFFFFF;
+    --accent-soft: #DDEFEC;
+    --chrome: #E6EAEC;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #0E141C; --surface: #151D28; --ink: #E8ECF2; --muted: #9AA4B6;
+      --line: #263243; --accent: #5EC6BC; --accent-ink: #08201E; --accent-soft: #163633; --chrome: #1C2633;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #0E141C; --surface: #151D28; --ink: #E8ECF2; --muted: #9AA4B6;
+    --line: #263243; --accent: #5EC6BC; --accent-ink: #08201E; --accent-soft: #163633; --chrome: #1C2633;
+  }
+  *, *::before, *::after { box-sizing: inherit; }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: "Readex Pro", "IBM Plex Sans Arabic", "Segoe UI", Tahoma, system-ui, sans-serif;
+    font-size: 1rem; line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 8px; }
+  img { max-width: 100%; display: block; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 1.25rem; }
+
+  /* Top */
+  .top { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 0; }
+  .mark {
+    width: 40px; height: 40px; border-radius: 11px; background: var(--accent); color: var(--accent-ink);
+    display: grid; place-items: center; font-weight: 700; font-size: .95rem; text-decoration: none; direction: ltr;
+  }
+  .lang {
+    font: inherit; font-size: .9rem; color: var(--ink); background: transparent;
+    border: 1px solid var(--line); padding: .35rem 1rem; border-radius: 999px; cursor: pointer;
+  }
+  .lang:hover { border-color: var(--accent); }
+
+  /* Intro */
+  .intro { display: grid; grid-template-columns: 1.4fr 1fr; gap: 2.5rem; align-items: end; padding: 3rem 0 3.25rem; }
+  .intro h1 { font-size: clamp(2.4rem, 6.4vw, 4.4rem); line-height: 1.08; font-weight: 600; margin: 0 0 1rem; letter-spacing: -.015em; }
+  .intro .role { font-size: clamp(1.1rem, 2.2vw, 1.35rem); margin: 0 0 1rem; color: var(--accent); font-weight: 500; }
+  .intro p.bio { margin: 0; color: var(--muted); font-size: 1.05rem; max-width: 34em; }
+  .side { display: grid; gap: 1.25rem; }
+  .actions { display: flex; flex-wrap: wrap; gap: .6rem; }
+  .btn {
+    display: inline-flex; align-items: center; gap: .5rem; text-decoration: none; font-weight: 500; font-size: .95rem;
+    padding: .65rem 1.15rem; border-radius: 10px; border: 1px solid var(--line); background: var(--surface);
+  }
+  .btn svg { width: 18px; height: 18px; flex: none; }
+  .btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+  .btn:hover { border-color: var(--accent); }
+  .stack { font-size: .9rem; color: var(--muted); margin: 0; }
+  .stack b { color: var(--ink); font-weight: 500; }
+
+  /* Work */
+  .work { padding: 1rem 0 2rem; }
+  .work-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; border-top: 1px solid var(--line); padding-top: 1.5rem; margin-bottom: 1.5rem; }
+  .work-head h2 { font-size: 1.35rem; font-weight: 600; margin: 0; }
+  .work-head span { color: var(--muted); font-size: .95rem; }
+  .grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem 1.5rem; }
+
+  .card { position: relative; display: flex; flex-direction: column; }
+  .shot {
+    border-radius: 14px; overflow: hidden; border: 1px solid var(--line); background: var(--surface);
+  }
+  .chrome { display: flex; align-items: center; gap: .6rem; padding: .55rem .8rem; background: var(--chrome); direction: ltr; }
+  .dots { display: flex; gap: 5px; flex: none; }
+  .dots i { width: 9px; height: 9px; border-radius: 50%; background: var(--line); display: block; }
+  .addr {
+    flex: 1; min-width: 0; font-size: .82rem; color: var(--muted); background: var(--surface);
+    border-radius: 6px; padding: .15rem .6rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .frame { aspect-ratio: 16 / 7; overflow: hidden; background: var(--chrome); }
+  .frame img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+  .card:hover .frame img { transform: scale(1.02); }
+  @media (prefers-reduced-motion: no-preference) {
+    .frame img { transition: transform .5s ease; }
+    .btn, .lang, .visit { transition: border-color .15s, color .15s, background-color .15s; }
+  }
+
+  .meta { padding: 1rem .15rem 0; display: flex; flex-direction: column; gap: .35rem; flex: 1; }
+  .kind { font-size: .85rem; color: var(--accent); font-weight: 500; }
+  .meta h3 { margin: 0; font-size: 1.2rem; font-weight: 600; line-height: 1.35; }
+  .meta p { margin: 0; color: var(--muted); }
+  .row { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-top: .5rem; flex-wrap: wrap; }
+  .tags { display: flex; flex-wrap: wrap; gap: .35rem; padding: 0; margin: 0; list-style: none; direction: ltr; }
+  .tags li { font-size: .78rem; padding: .1rem .55rem; border: 1px solid var(--line); border-radius: 6px; color: var(--muted); }
+  .visit { font-size: .9rem; font-weight: 500; color: var(--accent); text-decoration: none; display: inline-flex; align-items: center; gap: .35rem; }
+  .visit svg { width: 15px; height: 15px; }
+  [dir="rtl"] .visit svg { transform: scaleX(-1); }
+  .visit::after { content: ""; position: absolute; inset: 0; border-radius: 14px; }
+  .card:hover .visit { text-decoration: underline; text-underline-offset: 4px; }
+
+  footer { border-top: 1px solid var(--line); margin-top: 2rem; padding: 1.75rem 0 3rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; color: var(--muted); font-size: .9rem; }
+  footer a { text-decoration: none; border-bottom: 1px solid var(--line); }
+  footer a:hover { color: var(--accent); border-color: var(--accent); }
+  .ltr { direction: ltr; unicode-bidi: isolate; }
+
+  @media (max-width: 860px) {
+    .intro { grid-template-columns: 1fr; gap: 1.75rem; padding-top: 1.5rem; }
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="mark" href="#" aria-label="Home">AM</a>
+    <button class="lang" id="lang" type="button">English</button>
+  </header>
+
+  <section class="intro">
+    <div>
+      <h1 data-i="name">عبدالرحمن محمد</h1>
+      <p class="role" data-i="role">مطور ووردبريس – القاهرة</p>
+      <p class="bio" data-i="bio"></p>
+    </div>
+    <div class="side">
+      <div class="actions">
+        <a class="btn primary" href="mailto:abdelrahmanmo715@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          <span data-i="email">راسلني</span>
+        </a>
+        <a class="btn" href="https://wa.me/201019004157" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-5.1A8.5 8.5 0 1 1 21 11.5Z"/></svg>
+          <span>WhatsApp</span>
+        </a>
+        <a class="btn" href="https://linkedin.com/in/abdelrahman" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.5h4V21H3V9.5Zm7 0h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.1c0-1.22-.02-2.78-1.7-2.78-1.7 0-1.96 1.33-1.96 2.7V21h-4V9.5Z"/></svg>
+          <span>LinkedIn</span>
+        </a>
+        <a class="btn" href="https://github.com/AbdelrahmanMo715" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
+          <span>GitHub</span>
+        </a>
+      </div>
+      <p class="stack"><b data-i="stackLabel">أعمل بـ</b> <span class="ltr">WordPress, PHP, JavaScript, WooCommerce, Elementor, WPML / Polylang, Rank Math</span></p>
+    </div>
+  </section>
+
+  <main class="work">
+    <div class="work-head">
+      <h2 data-i="workTitle">مواقع منشورة</h2>
+      <span data-i="workNote"></span>
+    </div>
+    <ul class="grid" id="grid"></ul>
+  </main>
+
+  <footer>
+    <span data-i="footer"></span>
+    <span><a class="ltr" href="mailto:abdelrahmanmo715@gmail.com">abdelrahmanmo715@gmail.com</a> &nbsp; <a class="ltr" href="tel:+201019004157">01019004157</a></span>
+  </footer>
+</div>
+
+<script>
+  const projects = [
+    { id: "ecc", url: "https://ecc-group.ae/",
+      kind: { ar: "مجموعة تعليمية", en: "Education group" },
+      name: { ar: "ECC Knowledge Group", en: "ECC Knowledge Group" },
+      desc: { ar: "الموقع الرسمي لمجموعة تعليمية تقدّم درجات معترف بها دوليًا، بالعربية والإنجليزية، مع نماذج التقديم وتحسين الأداء و SEO.",
+              en: "Official site of an education group offering internationally recognised degrees, in Arabic and English, with application forms, performance and SEO work." },
+      tags: ["WordPress", "Elementor", "WPForms", "AR / EN"] },
+    { id: "edyou", url: "https://edyoutech.com/",
+      kind: { ar: "منصة تعليم إلكتروني", en: "E-learning platform" },
+      name: { ar: "EDYOU", en: "EDYOU" },
+      desc: { ar: "منصة لبرامج إدارة الأعمال أونلاين: كتالوج دورات، شراء عبر WooCommerce، وتسجيل دخول موحد (SSO) مع منصة التعلم.",
+              en: "Online business-education platform: course catalogue, WooCommerce checkout and single sign-on (SSO) with the learning platform." },
+      tags: ["WooCommerce", "LMS", "SSO", "Rank Math"] },
+    { id: "nadco", url: "https://www.nadco.com.sa/",
+      kind: { ar: "شركة مطابخ – السعودية", en: "Kitchen company – Saudi Arabia" },
+      name: { ar: "نادكو للمطابخ", en: "Nadco Kitchens" },
+      desc: { ar: "موقع شركة مطابخ سعودية بالعربية والإنجليزية: كتالوج منتجات، معرض أعمال، ونماذج لطلب المقاس وحجز الصيانة.",
+              en: "Bilingual site for a Saudi kitchen manufacturer: product catalogue, project gallery, and forms for measurement requests and maintenance booking." },
+      tags: ["WordPress", "RTL", "AR / EN", "Forms"] },
+    { id: "hz", url: "https://hzwholesale.com/",
+      kind: { ar: "متجر جملة", en: "Wholesale store" },
+      name: { ar: "HZ Wholesale", en: "HZ Wholesale" },
+      desc: { ar: "متجر جملة لموزعي الإلكترونيات (هواتف، أجهزة لوحية، إكسسوارات) مع إدارة المنتجات ومسار الطلب ومدونة.",
+              en: "Wholesale store for electronics resellers (phones, tablets, accessories) with product management, ordering flow and a blog." },
+      tags: ["WordPress", "WooCommerce"] },
+    { id: "rubens", url: "https://rubenstires.com/",
+      kind: { ar: "مركز إطارات وصيانة سيارات", en: "Tire & auto repair shop" },
+      name: { ar: "Ruben's Tires", en: "Ruben's Tires" },
+      desc: { ar: "موقع ومتجر لمركز إطارات وصيانة سيارات: صفحات مصممة بـ Elementor، وإدارة المنتجات ومسار الدفع وبوابات الدفع.",
+              en: "Site and store for a tire and auto repair shop: Elementor-built pages, product management, checkout flow and payment gateways." },
+      tags: ["WooCommerce", "Elementor", "CF7"] },
+    { id: "omega", url: "https://omegatrove.com/",
+      kind: { ar: "وكالة تسويق رقمي", en: "Digital marketing agency" },
+      name: { ar: "Omega Trove Consulting", en: "Omega Trove Consulting" },
+      desc: { ar: "موقع وكالة تسويق وبراندينج في فلوريدا: تخصيص القالب بتصميم متجاوب وعناصر تفاعلية.",
+              en: "Site for a Florida branding and marketing agency: theme customisation with responsive layouts and interactive elements." },
+      tags: ["WordPress", "PHP", "JavaScript"] },
+    { id: "lavison", url: "https://lavisonclinics.com/",
+      kind: { ar: "عيادات طبية", en: "Medical clinics" },
+      name: { ar: "عيادات لافيزون", en: "Lavison Clinics" },
+      desc: { ar: "قالب ووردبريس عربي يعتمد على العناصر المرئية، مع معارض صور وشرائح عرض يعدّلها العميل من لوحة التحكم.",
+              en: "Visual-heavy Arabic WordPress theme with galleries and sliders the client edits from the dashboard." },
+      tags: ["WordPress", "PHP", "RTL", "CF7"] },
+    { id: "codezilla", url: "https://itscodezilla.com/",
+      kind: { ar: "شركة برمجيات", en: "Software agency" },
+      name: { ar: "CodeZilla", en: "CodeZilla" },
+      desc: { ar: "تحويل تصميم HTML/CSS/JS ثابت إلى قالب ووردبريس ديناميكي بالكامل، مع التحكم في كل المحتوى من لوحة التحكم ودعم لغتين.",
+              en: "Converted a static HTML/CSS/JS design into a fully dynamic WordPress theme, with all content editable from the dashboard and two languages." },
+      tags: ["WordPress", "PHP", "Polylang"] }
+  ];
+
+  const t = {
+    ar: {
+      name: "عبدالرحمن محمد", role: "مطور ووردبريس – القاهرة",
+      bio: "أبني مواقع ووردبريس ومتاجر WooCommerce سريعة ومتجاوبة ومتعددة اللغات: من تحويل التصميم إلى قالب، إلى ربط منصات التعلم و SSO وتحسين الأداء و SEO.",
+      email: "راسلني", stackLabel: "أعمل بـ", workTitle: "مواقع منشورة",
+      workNote: projects.length + " مواقع، اضغط على أي موقع لزيارته",
+      visit: "زيارة الموقع", footer: "عبدالرحمن محمد – مطور ووردبريس", toggle: "English",
+      title: "عبدالرحمن محمد | مطور ووردبريس", alt: "صورة من موقع "
+    },
+    en: {
+      name: "Abdelrahman Mohamed", role: "WordPress Developer – Cairo",
+      bio: "I build fast, responsive, multilingual WordPress sites and WooCommerce stores: from design-to-theme conversion to LMS and SSO integrations, performance and SEO.",
+      email: "Email me", stackLabel: "I work with", workTitle: "Live sites",
+      workNote: projects.length + " sites, click any to visit",
+      visit: "Visit site", footer: "Abdelrahman Mohamed – WordPress Developer", toggle: "العربية",
+      title: "Abdelrahman Mohamed | WordPress Developer", alt: "Screenshot of "
+    }
+  };
+
+  const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>';
+
+  function render(lang) {
+    const g = document.getElementById("grid");
+    g.innerHTML = "";
+    projects.forEach(p => {
+      const host = p.url.replace(/^https?:\/\//, "").replace(/\/$/, "");
+      const li = document.createElement("li");
+      li.className = "card";
+      li.innerHTML = `
+        <div class="shot">
+          <div class="chrome" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span class="addr">${host}</span></div>
+          <div class="frame"><img src="img/${p.id}.avif" width="640" height="290" loading="lazy" decoding="async" alt="${t[lang].alt}${p.name[lang]}"></div>
+        </div>
+        <div class="meta">
+          <span class="kind">${p.kind[lang]}</span>
+          <h3>${p.name[lang]}</h3>
+          <p>${p.desc[lang]}</p>
+          <div class="row">
+            <ul class="tags">${p.tags.map(x => `<li>${x}</li>`).join("")}</ul>
+            <a class="visit" href="${p.url}" target="_blank" rel="noopener">${t[lang].visit} ${arrow}</a>
+          </div>
+        </div>`;
+      g.appendChild(li);
+    });
+  }
+
+  function setLang(lang) {
+    const h = document.documentElement;
+    h.lang = lang; h.dir = lang === "ar" ? "rtl" : "ltr";
+    document.title = t[lang].title;
+    document.querySelectorAll("[data-i]").forEach(el => { el.textContent = t[lang][el.dataset.i]; });
+    document.getElementById("lang").textContent = t[lang].toggle;
+    render(lang);
+    try { localStorage.setItem("pf-lang", lang); } catch (e) {}
+  }
+
+  let cur = "ar";
+  try { const s = localStorage.getItem("pf-lang"); if (s === "ar" || s === "en") cur = s; } catch (e) {}
+  const q = new URLSearchParams(location.search).get("lang");
+  if (q === "ar" || q === "en") cur = q;
+  document.getElementById("lang").addEventListener("click", () => { cur = cur === "ar" ? "en" : "ar"; setLang(cur); });
+  setLang(cur);
+</script>
+</body>
+</html>
